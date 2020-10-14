@@ -1,6 +1,6 @@
 # Comands to start mongo instance
 
-Run `run_mongo.sh` script and will start MongoDB at port 27017.
+Run `run_mongo.sh` script and the MongoDB will start at port 27017.
 
 Then, log into mongodb and run:
 
