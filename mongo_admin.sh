@@ -1,9 +1,8 @@
-# Log into mongodb with:
-mongo admin -u admin -p admin --host localhost --port 27017
-
-# Run these commands:
-use admin;
-db.grantRolesToUser('admin', [{ role: 'root', db: 'admin' }]);
+# Log into mongodb and execute script:
+mongo admin -u admin -p admin --host localhost --port 27017 < set_admin.js
 
 # Use this command out of the container to get the IP:
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+MONGOHOST=$(docker ps | grep 'tutum' | awk '{ print $1 }')
+MONGOHOST=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $MONGOHOST)
+
+echo "Mongo is running on: ${MONGOHOST}"
