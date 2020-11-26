@@ -1,0 +1,48 @@
+{"**metrics": {"*ACERTOS_POSITIVOS": "0.688050930460333 (1405/2042)",
+  "ACCURACY": 0.6983349657198825,
+  "AUC": 0.6983349657198825,
+  "F1": 0.6983030578345694,
+  "F1_MACRO": 0.6983030578345694,
+  "F1_MICRO": 0.6983349657198825,
+  "FALSE_NEGATIVE": 637,
+  "FALSE_POSITIVE": 595,
+  "FP_RATE": 0.2913809990205681,
+  "KAPPA": 0.3966699314397649,
+  "NEG_PRED_VALUE": 0.694337811900192,
+  "POS_PRED_VALUE": 0.7025,
+  "PRECISION": 0.7025,
+  "RECALL": 0.688050930460333,
+  "SENSITIVITY": 0.688050930460333,
+  "SPECIFICITY": 0.708619000979432,
+  "TRUE_NEGATIVE": 1447,
+  "TRUE_POSITIVE": 1405},
+ "*params": {"amsgrad": True,
+  "batch_size": 100,
+  "drop_prob": 0.2,
+  "earlyStopping": True,
+  "early_stopping_metric": "val_loss",
+  "embedding_size": 100,
+  "epochs": 100,
+  "lr": 0.00101423,
+  "max_epochs_no_improve": 10,
+  "print_every": 50,
+  "vocab_size": 7938,
+  "weight_decay": 0.002051},
+ "model": DeepClassifier(
+   (embeddings): Embedding(7938, 100)
+   (fc): Sequential(
+     (0): Sequential(
+       (0): Linear(in_features=100, out_features=50, bias=True)
+       (1): ReLU()
+     )
+     (1): Sequential(
+       (0): Linear(in_features=50, out_features=50, bias=True)
+       (1): ReLU()
+     )
+   )
+   (fc_out): Sequential(
+     (0): Dropout(p=0.2, inplace=False)
+     (1): Linear(in_features=50, out_features=1, bias=True)
+   )
+ )
+ }
